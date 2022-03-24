@@ -1,0 +1,22 @@
+## Git, Github의 기본 명령어 모음
+
+$ cd <directory> : git에 내용을 저장할 폴더로 위치 설정
+$ git init : .git 폴더 생성
+$ git clone <URL> : github 등에 있는 다른 프로젝트를 복사해서 내 컴퓨터로 가져오기 (* URL : 가져오려는 프로젝트가 있는 github URL)
+$ git status : 현재 상태 (어떤 파일들이 수정되었고, 추가되었는지 등)을 알려줌
+$ git diff : 변경된 '내용'이 무엇인지 궁금할때 사용 (각각 unstaged, staged 상태일 때의 내용을 비교) 
+$ git add <file name> : 해당 파일을 git에 추가하여 commit 가능한 상태로 만듦 (commit의 前 단계)
+$ git rm <file name> : 해당 파일을 git으로부터 삭제함 (삭제 후 commit하면 git에선 더 이상 해당 파일을 추적하지 않음)
+$ git mv <orignal file name> <revised file name> : 해당 파일의 이름을 수정함
+$ git commit -m "<memo>" : add되었던 파일들을 commit함. <memo>부분에는 이번 commit의 특이사항, 변동사항 등을 간단히 메모해서 나중에 알아보기 쉽게 함
+$ git commit -a -m "<memo>" : tracked 상태의 파일들을 add할 필요 없이 바로 commit함 (* untracked 상태의 파일들은 add부터 해야함)
+$ git commit --amend : commit할때 무언가 빠트린게 있다면, 수정한 부분을 다시 add한 후, 해당 명령어를 사용하면 새로 commit되지 않고 기존 commit을 덮어쓴다
+$ git log : 해당 프로젝트의 지금까지의 commit history를 보여줌
+
+
+*파일의 상태를 알려주는 용어
+- tracked : git에서 버전관리를 한 적이 있어서 git에서 변동사항을 추적할 수 있는 파일, git add를 하면 modified된다.
+- untracked : git에서 버전관리를 한 적이 없어서 git에서 변동사항을 추적할 수 없는 파일, git add를 하면 new file로 git에 추가된다
+- staged : add 되어서 commit 할 수 있는 상태의 파일 (add는 됬지만, 아직 commit은 안됨)
+- unstaged : add 되지 않았기 때문에 commit 할 수 없는 상태의 파일
+
