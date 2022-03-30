@@ -15,18 +15,29 @@ $ git commit -a -m "[memo]" : tracked 상태의 파일들을 add할 필요 없�
 $ git commit --amend : commit할때 무언가 빠트린게 있다면, 수정한 부분을 다시 add한 후, 해당 명령어를 사용하면 새로 commit되지 않고 기존 commit을 덮어쓴다<br/> 
 $ git log : 해당 프로젝트의 지금까지의 commit history를 보여줌<br/> 
 
+##### Branch
+$ git branch [branch name] : 새로운 branch를 생성<br/> 
+$ git checkout [branch name] : 해당 branch로 이동 (현재 작업 상태에 있는 branch를 변경하는 명령어)<br/> 
+$ git checkout -b [branch name] : 새로운 branch를 생성하면서 동시에 생성한 branch로 이동 <br/> 
+  
 ##### Remote 저장소
 $ git remote add [name] [url] : remote 저장소(보통 git hub)의 url에게 이름(name)을 부여하고 추가<br/> 
 $ git reomte show [name] : 이름(name)에 해당하는 remote 저장소의 구체적인 정보를 불러옴<br/> 
 $ git push [name] [branch name] : 내용을 remote 저장소의 branch에 업로드함<br/> 
 $ git remote rename [old name] [new name] : remote 저장소의 이름 바꾸기<br/> 
 $ git remote remove [name] : remote 저장소 삭제<br/> 
-<br/> 
+<br/>  
   
 ##### Tag
-$ git tag : 이미 만들어진 tag 목록 확인
+$ git tag : 현재 旣 존재하는 tag를 조회 <br/> 
+$ git tag -v [tag name] : 해당 tag를 만든 사람, tag에 달린 comment등의 정보를 알려줌<br/> 
+$ git tag [tag name]  (git tag [branch name] or [commit code] [tag name]) : tag를 추가함 (commit code를 지정해주지 않으면 가장 최신의 commit에 tag가 추가됨) 주로 버전 이름을 지정할 때 사용 (Lightweight tag) (ex. 1.1.0)<br/> 
+$ git tag -a [tag name] -m "[comment]" (+[branch name] or [commit code]) : tag를 추가함. tag와 함께 태그를 설명해주는 코멘트도 같이 달 수 있음 (Annotated tag) (ex. 1.1.0 "bug fixed version")<br/> 
+$ git tag -d [tag name] : 해당 tag를 삭제<br/> 
+$ git push [tag name] : 해당 tag를 github로 push함 (commit들을 push할때 태그는 push되지 않으므로 따로 해줘야함) (모든 tag를 push 하고 싶으면 '--tags'를 입력)<br/> 
+* commit code : $ git log 時, 첫줄에 나타나는 문자열을 말함 (commit "09f4acd3f8836b7f6fc44ad9e012f82faf861803"의 형태, ""안에 감싸진 부분)<br/> 
 
-*파일의 상태를 알려주는 용어<br/> 
+##### *파일의 상태를 알려주는 용어<br/> 
 - tracked : git에서 버전관리를 한 적이 있어서 git에서 변동사항을 추적할 수 있는 파일, git add를 하면 modified된다.<br/> 
 - untracked : git에서 버전관리를 한 적이 없어서 git에서 변동사항을 추적할 수 없는 파일, git add를 하면 new file로 git에 추가된다<br/> 
 - staged : add 되어서 commit 할 수 있는 상태의 파일 (add는 됬지만, 아직 commit은 안됨)<br/> 
