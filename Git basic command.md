@@ -34,7 +34,7 @@ $ git tag -v [tag name] : 해당 tag를 만든 사람, tag에 달린 comment등�
 $ git tag [tag name]  (git tag [branch name] or [commit code] [tag name]) : tag를 추가함 (commit code를 지정해주지 않으면 가장 최신의 commit에 tag가 추가됨) 주로 버전 이름을 지정할 때 사용 (Lightweight tag) (ex. 1.1.0)<br/> 
 $ git tag -a [tag name] -m "[comment]" (+[branch name] or [commit code]) : tag를 추가함. tag와 함께 태그를 설명해주는 코멘트도 같이 달 수 있음 (Annotated tag) (ex. 1.1.0 "bug fixed version")<br/> 
 $ git tag -d [tag name] : 해당 tag를 삭제<br/> 
-$ git push [tag name] : 해당 tag를 github로 push함 (commit들을 push할때 태그는 push되지 않으므로 따로 해줘야함) (모든 tag를 push 하고 싶으면 '--tags'를 입력)<br/> 
+$ git push [remote repository name] [tag name] : 해당 tag를 github로 push함 (commit들을 push할때 태그는 push되지 않으므로 따로 해줘야함) (모든 tag를 push 하고 싶으면 '--tags'를 입력)<br/> 
 * commit code : $ git log 時, 첫줄에 나타나는 문자열을 말함 (commit "09f4acd3f8836b7f6fc44ad9e012f82faf861803"의 형태, ""안에 감싸진 부분)<br/> 
 
 ##### *파일의 상태를 알려주는 용어<br/> 
