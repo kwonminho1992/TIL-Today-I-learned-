@@ -30,9 +30,6 @@ GUI에 비해 컴퓨터 자원을 덜 잡아먹으며, 명령 몇줄만으로 �
 (1) Web server : 정적인 자료(html, css, image 등)를 처리하는 server (Apache가 대표적)</br>
 (2) Was server : 동적인 자료(db연동, 비즈니스로직 등)를 처리하는 server (Tomcat이 대표적) </br>
 
-앞으로 더 정리해야할 것들 : </br>
-IP,라우팅,DNS, NAT/고정IP, 공인IP/사설IP, 포트포워딩</br>
-
 
 ### Linux의 계정
 <b>1. 계정</b></br>
@@ -65,3 +62,4 @@ $ man + 명령어이름 : 해당 명령어에 대한 manual(설명)을 보여줌
  2) TCP/IP기본 네트워크 (IP,PORT)에 대하여 설명하라.
  3) 고정IP, NAT, DHCP, 포트 포워딩 에 대하여 설명하라.
  4) VMware, virtualbox에 대하여 네트워크 설정에 대하여 설명하라.
+ 5) IP,라우팅,DNS, 공인IP/사설IP,
