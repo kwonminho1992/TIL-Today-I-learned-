@@ -36,10 +36,17 @@ $ git tag -a [tag name] -m "[comment]" (+[branch name] or [commit code]) : tag�
 $ git tag -d [tag name] : 해당 tag를 삭제<br/> 
 $ git push [remote repository name] [tag name] : 해당 tag를 github로 push함 (commit들을 push할때 태그는 push되지 않으므로 따로 해줘야함) (모든 tag를 push 하고 싶으면 '--tags'를 입력)<br/> 
 * commit code : $ git log 時, 첫줄에 나타나는 문자열을 말함 (commit "09f4acd3f8836b7f6fc44ad9e012f82faf861803"의 형태, ""안에 감싸진 부분)<br/> 
-
-##### *파일의 상태를 알려주는 용어<br/> 
+* 버전 관리 : ver a.b.c의 형태로 관리<br/>
+  a (Major) - 이전 버전과 호환이 안되는 정도로 변경했을 때 바꿈<br/>
+  b (Minor) - 기능의 추가, 변경 시 바꿈<br/>
+  c (Patch) - 버그, 에러 등을 수정했을 때 바꿈<br/>
+  
+  
+##### *용어<br/> 
 - tracked : git에서 버전관리를 한 적이 있어서 git에서 변동사항을 추적할 수 있는 파일, git add를 하면 modified된다.<br/> 
 - untracked : git에서 버전관리를 한 적이 없어서 git에서 변동사항을 추적할 수 없는 파일, git add를 하면 new file로 git에 추가된다<br/> 
 - staged : add 되어서 commit 할 수 있는 상태의 파일 (add는 됬지만, 아직 commit은 안됨)<br/> 
 - unstaged : add 되지 않았기 때문에 commit 할 수 없는 상태의 파일<br/> 
 
+- snapshot : 특정 시점의 파일 상태 (특정 시점의 code)
+- delta : 해당 파일의 이전 상태와 비교하여 변경된 사항
