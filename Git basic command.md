@@ -14,6 +14,8 @@ $ git commit -m "[memo]" : add되었던 파일들을 commit함. <memo>부분에�
 $ git commit -a -m "[memo]" : tracked 상태의 파일들을 add할 필요 없이 바로 commit함 (* untracked 상태의 파일들은 add부터 해야함)<br/> 
 $ git commit --amend : commit할때 무언가 빠트린게 있다면, 수정한 부분을 다시 add한 후, 해당 명령어를 사용하면 새로 commit되지 않고 기존 commit을 덮어쓴다<br/> 
 $ git log : 해당 프로젝트의 지금까지의 commit history를 보여줌<br/> 
+$ git checkout [commit hash value] : 현재 작업 중인 프로젝트를 해당 commit 상태로 되돌아감
+  
 
 ##### Branch
 $ git branch [branch name] : 새로운 branch를 생성<br/> 
