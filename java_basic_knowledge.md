@@ -1,10 +1,10 @@
-###Compile vs Interpret
+<h3>Compile vs Interpret</h3>
 
 - Compile : 개발자가 작성한 코드를 컴퓨터가 이해할 수 있는 언어로 바꾸는 작업
 
 - Interpret : 개발자가 작성한 코드를 컴퓨터가 이해하면서 실행 같이도 함
 
-###Java의 특징
+<h3>Java의 특징</h3>
 
 1. 플랫폼(app이 실행되는 환경)의 독립성 - 컴파일 후 인터프리트를 해야하는 언어
     - java platform의 종류
@@ -22,7 +22,7 @@
     - JDK (Standard edition development kit) = JRE + compiler + interpreter + 문서화응용프로그램 v.v....
         - JDK 8 : JRE의 버전이 높을 수록 사용할 수 있는 라이브러리의 개수가 적어져서 가장 안전한 8버전을 많이 사용 (그 다음으로는 11버전을 많이 씀)
 
-###명령프롬프트에서 자바 실행하기
+<h3>명령프롬프트에서 자바 실행하기</h3>
 
 1.  환경변수 설정 : 어느 디렉토리에서나 컴파일&실행을 가능하게 설정하는 것 (설정법은 구글 검색으로 찾아볼 것)
 2. 컴파일
@@ -39,7 +39,7 @@
 
 ![Java_run_procedure](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3642a904-33a6-4540-b900-25b79b5d4ebf/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220424%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220424T095044Z&X-Amz-Expires=86400&X-Amz-Signature=18916b27ecffb698cf0fbcd8f71fa6e5c20df0e83d72477f88cbd466e92ccb65&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 
-###자료형 (Data type)
+<h3>자료형 (Data type)</h3>
 
 1. 기본형(primitive) : 값을 직접 가지고 있는 유형
     1. 숫자형
@@ -73,7 +73,7 @@
             1. key : value 의 구조
             2. 크기가 가변적임 (추가, 삭제가 용이함)
 
-**연산자 (Operator)**
+<h3>연산자 (Operator)</h3>
 
 1. 이항(二項)연산자 (binary operator)
     1. 산술연산자 (arithmetic operator)
@@ -108,7 +108,7 @@ even
     1. if condition
     2. switch condition
 
-**반복문 (Loop)**
+<h3>반복문 (Loop)</h3>
 
 1. 종류
     1. for loop
