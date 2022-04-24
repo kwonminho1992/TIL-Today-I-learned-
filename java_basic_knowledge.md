@@ -26,18 +26,18 @@
 
 1.  환경변수 설정 : 어느 디렉토리에서나 컴파일&실행을 가능하게 설정하는 것 (설정법은 구글 검색으로 찾아볼 것)
 2. 컴파일
-    1. option 1 : 같은 디렉토리 안에 컴파일하기
+    1. option 1 : 같은 디렉토리 안에 컴파일하기</br>
         **$ javac src디렉토리\자바파일.java**
-    2. option 2 : bin 디렉토리 안에 컴파일하기
+    2. option 2 : bin 디렉토리 안에 컴파일하기</br>
         **$ javac -d bin디렉토리 src디렉토리\자바파일.java**
-3. 파일 실행
+3. 파일 실행</br>
     **$ java -cp 디렉토리 클래스이름 (ex. java -cp D:\244\mySE\bin First)**
 4. 문서화
     1. html 페이지를 생성함
-    2. class, method, constructor 등의 바로 위에 document comment를 달아 해당 코드에 대해 문서화된 사용법을 만들 수 있다
+    2. class, method, constructor 등의 바로 위에 document comment를 달아 해당 코드에 대해 문서화된 사용법을 만들 수 있다</br>
     **$ javadoc -d doc src디렉토리\자바파일.java**
 
-![Java_run_procedure](./01.jpg)
+![Java_run_procedure](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3642a904-33a6-4540-b900-25b79b5d4ebf/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220424%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220424T095044Z&X-Amz-Expires=86400&X-Amz-Signature=18916b27ecffb698cf0fbcd8f71fa6e5c20df0e83d72477f88cbd466e92ccb65&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 
 ###자료형 (Data type)
 
@@ -55,7 +55,7 @@
             2. Multi byte (영어 外 문자 표기용) - MS949, CP949 等
             3. Unicode (전세계 모든 문자 표기, 표준)
                 1. 2byte 기반 : 기본 (Java의 기본 문자조합)
-                2. 1~3byte 기반 : 영어는 1byte만 사용, 다른 언어는 2~3byte를 사용 (효율적인 메모리의 사용을 위함 → UTF-8)
+                2. 1-3byte 기반 : 영어는 1byte만 사용, 다른 언어는 2~3byte를 사용 (효율적인 메모리의 사용을 위함 → UTF-8)
     3. 논리형
         1. 종류 : boolean (메모리 1byte 사용)
         2. 특징 : 다른 자료형과 형변환이 불가능 (true or false 값만 가지도록 고정되어있음)
