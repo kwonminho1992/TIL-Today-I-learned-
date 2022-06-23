@@ -21,6 +21,7 @@ $ git checkout [commit hash value] : 현재 작업 중인 프로젝트를 해당
 $ git branch [branch name] : 새로운 branch를 생성<br/> 
 $ git checkout [branch name] : 해당 branch로 이동 (현재 작업 상태에 있는 branch를 변경하는 명령어)<br/> 
 $ git checkout -b [branch name] : 새로운 branch를 생성하면서 동시에 생성한 branch로 이동 <br/>  
+$ git merge [branch name] : 현재의 branch와 명령어에 있는 branch를 병합 (명령어에 있는 branch의 변경사항들도 모두 반영시키기) <br/>
 
   
 ##### Remote 저장소
