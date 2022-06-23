@@ -20,7 +20,8 @@ $ git checkout [commit hash value] : 현재 작업 중인 프로젝트를 해당
 ##### Branch
 $ git branch [branch name] : 새로운 branch를 생성<br/> 
 $ git checkout [branch name] : 해당 branch로 이동 (현재 작업 상태에 있는 branch를 변경하는 명령어)<br/> 
-$ git checkout -b [branch name] : 새로운 branch를 생성하면서 동시에 생성한 branch로 이동 <br/> 
+$ git checkout -b [branch name] : 새로운 branch를 생성하면서 동시에 생성한 branch로 이동 <br/>  
+
   
 ##### Remote 저장소
 $ git remote add [name] [url] : remote 저장소(보통 git hub)의 url에게 이름(name)을 부여하고 추가<br/> 
@@ -28,6 +29,10 @@ $ git reomte show [name] : 이름(name)에 해당하는 remote 저장소의 구�
 $ git push [name] [branch name] : 내용을 remote 저장소의 branch에 업로드함<br/> 
 $ git remote rename [old name] [new name] : remote 저장소의 이름 바꾸기<br/> 
 $ git remote remove [name] : remote 저장소 삭제<br/> 
+  <br/> 
+$ pull request (in github) : master(main)가 아닌 branch에 commit한 내용을 master에 반영해줄 것을 요청<br/> 
+$ Merge pull request (in github) : 다른 branch에서 pull request한 내용을 master(main)에 합치도록 허락<br/> 
+$ git pull [name] [branch name] : 다른 branch의 내용을 현재 branch에 가져오기 (동기화)<br/> 
 <br/>  
   
 ##### Tag
