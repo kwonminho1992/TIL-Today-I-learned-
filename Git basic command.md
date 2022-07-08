@@ -14,17 +14,24 @@ $ git commit -m "[memo]" : add되었던 파일들을 commit함. <memo>부분에�
 $ git commit -a -m "[memo]" : tracked 상태의 파일들을 add할 필요 없이 바로 commit함 (* untracked 상태의 파일들은 add부터 해야함)<br/> 
 $ git commit --amend : commit할때 무언가 빠트린게 있다면, 수정한 부분을 다시 add한 후, 해당 명령어를 사용하면 새로 commit되지 않고 기존 commit을 덮어쓴다<br/> 
 $ git log : 해당 프로젝트의 지금까지의 commit history를 보여줌<br/> 
-$ git checkout [commit hash value] : 현재 작업 중인 프로젝트를 해당 commit 상태로 되돌아감
-  
+$ git checkout [commit hash value] : 현재 작업 중인 프로젝트를 해당 commit 상태로 되돌아감<br/> 
 
-##### Branch
+#### Stash (임시저장)
+$ git stash : 현재 내용을 stack에 임시로 저장함 (현재 작업 중인 내용을 커밋하긴 힘든 상태에서 다른 작업으로 넘어갈 때 사용)<br/> 
+$ git stash list : stack에 임시 저장된 목록을 불러오기<br/> 
+$ git stash apply [stash name] : 해당 stash로 돌아감, stage 상태는 복원되지 않음<br/>
+$ git stash apply --index : 해당 stash의 stage 상태까지 돌아감 <br/>
+$ git stash drop [stash name] : 해당 stash를 삭제 <br/>
+$ git stash drop [stash name] : 해당 stash으로 돌아가고, stash는 삭제 <br/>
+  
+#### Branch
 $ git branch [branch name] : 새로운 branch를 생성<br/> 
 $ git checkout [branch name] : 해당 branch로 이동 (현재 작업 상태에 있는 branch를 변경하는 명령어)<br/> 
 $ git checkout -b [branch name] : 새로운 branch를 생성하면서 동시에 생성한 branch로 이동 <br/>  
 $ git merge [branch name] : 현재의 branch와 명령어에 있는 branch를 병합 (명령어에 있는 branch의 변경사항들도 모두 반영시키기) <br/>
 
   
-##### Remote 저장소
+#### Remote 저장소
 $ git remote add [name] [url] : remote 저장소(보통 git hub)의 url에게 이름(name)을 부여하고 추가<br/> 
 $ git reomte show [name] : 이름(name)에 해당하는 remote 저장소의 구체적인 정보를 불러옴<br/> 
 $ git push [name] [branch name] : 내용을 remote 저장소의 branch에 업로드함<br/> 
@@ -34,10 +41,9 @@ $ git remote remove [name] : remote 저장소 삭제<br/>
 $ pull request (in github) : master(main)가 아닌 branch에 commit한 내용을 master에 반영해줄 것을 요청<br/> 
 $ Merge pull request (in github) : 다른 branch에서 pull request한 내용을 master(main)에 합치도록 허락<br/> 
 $ git pull [name] [branch name] : 다른 branch의 내용을 현재 branch에 가져오기 (동기화)<br/> 
-$ git stash : 현재 staging에 있는 사항을 stack에 넣어둔다. (커밋이 충돌날때 git stash -> git pull 로 해결 가능)<br/>
 <br/>  
   
-##### Tag
+#### Tag
 $ git tag : 현재 旣 존재하는 tag를 조회 <br/> 
 $ git tag -v [tag name] : 해당 tag를 만든 사람, tag에 달린 comment등의 정보를 알려줌<br/> 
 $ git tag [tag name]  (git tag [branch name] or [commit code] [tag name]) : tag를 추가함 (commit code를 지정해주지 않으면 가장 최신의 commit에 tag가 추가됨) 주로 버전 이름을 지정할 때 사용 (Lightweight tag) (ex. 1.1.0)<br/> 
@@ -52,7 +58,7 @@ $ git push origin :[tag name] : github에 이미 업로드된 tag를 삭제<br/>
   c (Patch) - 버그, 에러 등을 수정했을 때 바꿈<br/>
   
   
-##### *용어<br/> 
+#### *용어<br/> 
 - tracked : git에서 버전관리를 한 적이 있어서 git에서 변동사항을 추적할 수 있는 파일, git add를 하면 modified된다.<br/> 
 - untracked : git에서 버전관리를 한 적이 없어서 git에서 변동사항을 추적할 수 없는 파일, git add를 하면 new file로 git에 추가된다<br/> 
 - staged : add 되어서 commit 할 수 있는 상태의 파일 (add는 됬지만, 아직 commit은 안됨)<br/> 
