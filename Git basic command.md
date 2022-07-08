@@ -34,6 +34,7 @@ $ git remote remove [name] : remote 저장소 삭제<br/>
 $ pull request (in github) : master(main)가 아닌 branch에 commit한 내용을 master에 반영해줄 것을 요청<br/> 
 $ Merge pull request (in github) : 다른 branch에서 pull request한 내용을 master(main)에 합치도록 허락<br/> 
 $ git pull [name] [branch name] : 다른 branch의 내용을 현재 branch에 가져오기 (동기화)<br/> 
+$ git stash : 현재 staging에 있는 사항을 stack에 넣어둔다. (커밋이 충돌날때 git stash -> git pull 로 해결 가능)<br/>
 <br/>  
   
 ##### Tag
