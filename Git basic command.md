@@ -22,7 +22,7 @@ $ git stash list : stack에 임시 저장된 목록을 불러오기<br/>
 $ git stash apply [stash name] : 해당 stash로 돌아감, stage 상태는 복원되지 않음<br/>
 $ git stash apply --index : 해당 stash의 stage 상태까지 돌아감 <br/>
 $ git stash drop [stash name] : 해당 stash를 삭제 <br/>
-$ git stash drop [stash name] : 해당 stash으로 돌아가고, stash는 삭제 <br/>
+$ git stash pop [stash name] : 해당 stash으로 돌아가고, stash는 삭제 <br/>
   
 #### Branch
 $ git branch [branch name] : 새로운 branch를 생성<br/> 
