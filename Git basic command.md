@@ -6,7 +6,6 @@ $ cd [directory] : git에 내용을 저장할 폴더로 위치 설정<br/>
 $ git init : .git 폴더 생성<br/> 
 $ git clone [URL] : github 등에 있는 다른 프로젝트를 복사해서 내 컴퓨터로 가져오기 (* URL : 가져오려는 프로젝트가 있는 github URL)<br/> 
 $ git status : 현재 상태 (어떤 파일들이 수정되었고, 추가되었는지 등)을 알려줌<br/> 
-$ git diff : 변경된 '내용'이 무엇인지 궁금할때 사용 (각각 unstaged, staged 상태일 때의 내용을 비교) <br/> 
 $ git add [file name] : 해당 파일을 git에 추가하여 commit 가능한 상태로 만듦 (commit의 前 단계)<br/> 
 $ git rm [file name] : 해당 파일을 git으로부터 삭제함 (삭제 후 commit하면 git에선 더 이상 해당 파일을 추적하지 않음)<br/> 
 $ git mv [orignal file name] [revised file name] : 해당 파일의 이름을 수정함<br/> 
@@ -14,7 +13,9 @@ $ git commit -m "[memo]" : add되었던 파일들을 commit함. <memo>부분에�
 $ git commit -a -m "[memo]" : tracked 상태의 파일들을 add할 필요 없이 바로 commit함 (* untracked 상태의 파일들은 add부터 해야함)<br/> 
 $ git commit --amend : commit할때 무언가 빠트린게 있다면, 수정한 부분을 다시 add한 후, 해당 명령어를 사용하면 새로 commit되지 않고 기존 commit을 덮어쓴다<br/> 
 $ git log : 해당 프로젝트의 지금까지의 commit history를 보여줌<br/> 
+$ git log --all --graph --oneline : 모든 commit history를 commit당 한줄씩 그림으로 보여줌<br/>
 $ git checkout [commit hash value] : 현재 작업 중인 프로젝트를 해당 commit 상태로 되돌아감<br/> 
+$ git reset --hard [commit hash value] : HEAD(現 commit)를 해당 commit으로 바꾸고, 그 앞에 있는 commit들은 취소<br/>
 
 #### Stash (임시저장)
 $ git stash : 현재 내용을 stack에 임시로 저장함 (현재 작업 중인 내용을 커밋하긴 힘든 상태에서 다른 작업으로 넘어갈 때 사용)<br/> 
@@ -27,10 +28,15 @@ $ git stash pop [stash name] : 해당 stash으로 돌아가고, stash는 삭제 
 #### Branch
 $ git branch [branch name] : 새로운 branch를 생성<br/> 
 $ git checkout [branch name] : 해당 branch로 이동 (현재 작업 상태에 있는 branch를 변경하는 명령어)<br/> 
-$ git checkout -b [branch name] : 새로운 branch를 생성하면서 동시에 생성한 branch로 이동 <br/>  
-$ git merge [branch name] : 현재의 branch와 명령어에 있는 branch를 병합 (명령어에 있는 branch의 변경사항들도 모두 반영시키기) <br/>
+$ git checkout -b [branch name] : 새로운 branch를 생성하면서 동시에 생성한 branch로 이동 <br/><br/>
 
-  
+$ git merge [branch name] : (2 way merge) 현재의 branch와 [branch name]을 병합 ([branch name]의 내용을 현재의 branch에 합침), 충돌되는 내용이 있으면 직접 수정해야함 <br/>
+$ git mergetool : (3 way merge) p4merge 같은 tool을 이용하여 충돌부분을 수정할 수 있음. (두 브랜치의 내용 중 하나를 취사선택 가능) <br/>
+* p4merge 다운로드 주소 : https://www.perforce.com/downloads/visual-merge-tool </br>
+* p4merge 사용법 (Mac) : https://gist.github.com/tony4d/3454372</br>
+* p4merge 사용법 (Window) : https://teddylee777.github.io/git/study-git-2</br>
+$ git diff : 변경된 '내용'이 무엇인지 궁금할때 사용 <br/> <br/> 
+
 #### Remote 저장소
 $ git remote add [name] [url] : remote 저장소(보통 git hub)의 url에게 이름(name)을 부여하고 추가<br/> 
 $ git reomte show [name] : 이름(name)에 해당하는 remote 저장소의 구체적인 정보를 불러옴<br/> 
@@ -63,6 +69,12 @@ $ git push origin :[tag name] : github에 이미 업로드된 tag를 삭제<br/>
 - untracked : git에서 버전관리를 한 적이 없어서 git에서 변동사항을 추적할 수 없는 파일, git add를 하면 new file로 git에 추가된다<br/> 
 - staged : add 되어서 commit 할 수 있는 상태의 파일 (add는 됬지만, 아직 commit은 안됨)<br/> 
 - unstaged : add 되지 않았기 때문에 commit 할 수 없는 상태의 파일<br/> 
-
-- snapshot : 특정 시점의 파일 상태 (특정 시점의 code)
-- delta : 해당 파일의 이전 상태와 비교하여 변경된 사항
+<br/> 
+- snapshot : 특정 시점의 파일 상태 (특정 시점의 code)<br/> 
+- delta : 해당 파일의 이전 상태와 비교하여 변경된 사항<br/> 
+<br/> 
+- base : branch가 분기 되는 시점의 commit을 의미<br/> 
+- cherry pick :<br/> 
+base -- a1 -- a2 -- merged commit (a2 + b1, not a2 + b2)<br/> 
+----  \- b1 -- b2 -/<br/> 
+     
