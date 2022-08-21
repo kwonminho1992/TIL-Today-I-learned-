@@ -39,7 +39,7 @@ $ git mergetool : (3 way merge) p4merge 같은 tool을 이용하여 충돌부분
 
 #### Git flow
 ![image](https://user-images.githubusercontent.com/69135840/185782138-83ee2810-9307-40aa-a974-1b9a3691ad4f.png)
-개념, 사용법 : https://hbase.tistory.com/60
+개념, 사용법 : https://danielkummer.github.io/git-flow-cheatsheet/index.ko_KR.html
 
 #### Remote 저장소
 $ git remote add [name] [url] : remote 저장소(보통 git hub)의 url에게 이름(name)을 부여하고 추가<br/> 
