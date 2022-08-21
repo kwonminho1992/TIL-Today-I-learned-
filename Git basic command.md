@@ -31,11 +31,15 @@ $ git checkout [branch name] : 해당 branch로 이동 (현재 작업 상태에 
 $ git checkout -b [branch name] : 새로운 branch를 생성하면서 동시에 생성한 branch로 이동 <br/><br/>
 
 $ git merge [branch name] : (2 way merge) 현재의 branch와 [branch name]을 병합 ([branch name]의 내용을 현재의 branch에 합침), 충돌되는 내용이 있으면 직접 수정해야함 <br/>
+$ git diff : 변경된 '내용'이 무엇인지 궁금할때 사용 <br/>
 $ git mergetool : (3 way merge) p4merge 같은 tool을 이용하여 충돌부분을 수정할 수 있음. (두 브랜치의 내용 중 하나를 취사선택 가능) <br/>
 * p4merge 다운로드 주소 : https://www.perforce.com/downloads/visual-merge-tool </br>
 * p4merge 사용법 (Mac) : https://gist.github.com/tony4d/3454372</br>
-* p4merge 사용법 (Window) : https://teddylee777.github.io/git/study-git-2</br>
-$ git diff : 변경된 '내용'이 무엇인지 궁금할때 사용 <br/> <br/> 
+* p4merge 사용법 (Window) : https://teddylee777.github.io/git/study-git-2<br><br/> 
+
+#### Git flow
+![image](https://user-images.githubusercontent.com/69135840/185782138-83ee2810-9307-40aa-a974-1b9a3691ad4f.png)
+개념, 사용법 : https://hbase.tistory.com/60
 
 #### Remote 저장소
 $ git remote add [name] [url] : remote 저장소(보통 git hub)의 url에게 이름(name)을 부여하고 추가<br/> 
@@ -68,13 +72,11 @@ $ git push origin :[tag name] : github에 이미 업로드된 tag를 삭제<br/>
 - tracked : git에서 버전관리를 한 적이 있어서 git에서 변동사항을 추적할 수 있는 파일, git add를 하면 modified된다.<br/> 
 - untracked : git에서 버전관리를 한 적이 없어서 git에서 변동사항을 추적할 수 없는 파일, git add를 하면 new file로 git에 추가된다<br/> 
 - staged : add 되어서 commit 할 수 있는 상태의 파일 (add는 됬지만, 아직 commit은 안됨)<br/> 
-- unstaged : add 되지 않았기 때문에 commit 할 수 없는 상태의 파일<br/> 
-<br/> 
+- unstaged : add 되지 않았기 때문에 commit 할 수 없는 상태의 파일<br/> <br/> 
 - snapshot : 특정 시점의 파일 상태 (특정 시점의 code)<br/> 
-- delta : 해당 파일의 이전 상태와 비교하여 변경된 사항<br/> 
-<br/> 
+- delta : 해당 파일의 이전 상태와 비교하여 변경된 사항<br/> <br/> 
 - base : branch가 분기 되는 시점의 commit을 의미<br/> 
 - cherry pick :<br/> 
 base -- a1 -- a2 -- merged commit (a2 + b1, not a2 + b2)<br/> 
-----  \- b1 -- b2 -/<br/> 
+.... \- b1 -- b2 -/<br/> 
      
