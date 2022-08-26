@@ -29,7 +29,8 @@ $ git stash pop [stash name] : 해당 stash으로 돌아가고, stash는 삭제 
 $ git branch [branch name] : 새로운 branch를 생성<br/> 
 $ git checkout [branch name] : 해당 branch로 이동 (현재 작업 상태에 있는 branch를 변경하는 명령어)<br/> 
 $ git checkout -b [branch name] : 새로운 branch를 생성하면서 동시에 생성한 branch로 이동 <br/><br/>
-
+$ git branch -d [branchname] : 해당 branch를 삭제 <br/>
+  
 $ git merge [branch name] : (2 way merge) 현재의 branch와 [branch name]을 병합 ([branch name]의 내용을 현재의 branch에 합침), 충돌되는 내용이 있으면 직접 수정해야함 <br/>
 $ git diff : 변경된 '내용'이 무엇인지 궁금할때 사용 <br/>
 $ git mergetool : (3 way merge) p4merge 같은 tool을 이용하여 충돌부분을 수정할 수 있음. (두 브랜치의 내용 중 하나를 취사선택 가능) <br/>
