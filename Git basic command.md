@@ -8,6 +8,7 @@ $ git clone [URL] : github 등에 있는 다른 프로젝트를 복사해서 내
 $ git status : 현재 상태 (어떤 파일들이 수정되었고, 추가되었는지 등)을 알려줌<br/> 
 $ git add [file name] : 해당 파일을 git에 추가하여 commit 가능한 상태로 만듦 (commit의 前 단계)<br/> 
 $ git rm [file name] : 해당 파일을 git으로부터 삭제함 (삭제 후 commit하면 git에선 더 이상 해당 파일을 추적하지 않음)<br/> 
+$ git rm -r --cached . : stage에 저장된 모든 내용을 삭제함 (파일을 올리지 않기 위해 .gitignore에 추가했으나 이미 해당 파일이 github에 올라가있는 경우에 주로 사용) <br/>
 $ git mv [orignal file name] [revised file name] : 해당 파일의 이름을 수정함<br/> 
 $ git commit -m "[memo]" : add되었던 파일들을 commit함. <memo>부분에는 이번 commit의 특이사항, 변동사항 등을 간단히 메모해서 나중에 알아보기 쉽게 함<br/> 
 $ git commit -a -m "[memo]" : tracked 상태의 파일들을 add할 필요 없이 바로 commit함 (* untracked 상태의 파일들은 add부터 해야함)<br/> 
@@ -32,7 +33,7 @@ $ git checkout -b [branch name] : 새로운 branch를 생성하면서 동시에 
 $ git branch -d [branchname] : 해당 branch를 삭제 <br/>
   
 $ git merge [branch name] : (2 way merge) 현재의 branch와 [branch name]을 병합 ([branch name]의 내용을 현재의 branch에 합침), 충돌되는 내용이 있으면 직접 수정해야함 <br/>
-$ git cherry-pick [commit's hashcode] : 다른 브랜치의 특정 커밋만 가져와서 현재 브랜치에 붙임 
+$ git cherry-pick [commit's hashcode] : 다른 브랜치의 특정 커밋만 가져와서 현재 브랜치에 붙임 <br/>
 $ git diff : 변경된 '내용'이 무엇인지 궁금할때 사용 <br/>
 $ git mergetool : (3 way merge) p4merge 같은 tool을 이용하여 충돌부분을 수정할 수 있음. (두 브랜치의 내용 중 하나를 취사선택 가능) <br/>
 * p4merge 다운로드 주소 : https://www.perforce.com/downloads/visual-merge-tool </br>
