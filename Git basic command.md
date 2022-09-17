@@ -32,6 +32,7 @@ $ git checkout -b [branch name] : 새로운 branch를 생성하면서 동시에 
 $ git branch -d [branchname] : 해당 branch를 삭제 <br/>
   
 $ git merge [branch name] : (2 way merge) 현재의 branch와 [branch name]을 병합 ([branch name]의 내용을 현재의 branch에 합침), 충돌되는 내용이 있으면 직접 수정해야함 <br/>
+$ git cherry-pick [commit's hashcode] : 다른 브랜치의 특정 커밋만 가져와서 현재 브랜치에 붙임 
 $ git diff : 변경된 '내용'이 무엇인지 궁금할때 사용 <br/>
 $ git mergetool : (3 way merge) p4merge 같은 tool을 이용하여 충돌부분을 수정할 수 있음. (두 브랜치의 내용 중 하나를 취사선택 가능) <br/>
 * p4merge 다운로드 주소 : https://www.perforce.com/downloads/visual-merge-tool </br>
