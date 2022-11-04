@@ -1,0 +1,96 @@
+# 운영체제란?
+
+- 하드웨어와 소프트웨어를 연결해주는 매개체
+- 협의의 운영체제 (커널) : 메모리에 상주하는 부분 (전공자는 커널을 주로 다룸)
+- 광의의 운영체제 : 커널 뿐만 아니라 각종 주변 시스템 유틸리티를 포함한 개념
+
+## 운영체제의 목적
+
+- 컴퓨터의 시스템 자원(하드웨어  && 소프트웨어)의 효율적 관리
+- 사용자와 시스템의 보호
+- 사용자가 편리하게 컴퓨터를 사용할 수 있도록 도와줌
+
+## 운영체제의 분류
+
+- 동시작업 가능여부
+    - single tasking : MS DOS 같은 과거의 운영체제, 엘리베이터 등 단일목적을 위한 기계에 쓰이는 운영체제
+    - multi tasking : UNIX, WINDOW, MAC 등의 현대의 운영체제
+- 사용자의 수 (여러 사용자가 동시에 접속하여 사용할 수 있는가?)
+    - single user : MS DOS, WINDOW
+    - multi user : LINUX, NT server
+- 처리방식
+    - batch processing(일괄처리)
+        - 작업들을 모아서 한꺼번에 처리하는 방식
+        - 현대 운영체제에선 거의 쓰이지 않음 - not interactive
+    - time sharing(시분할)
+        - 작업들에게 돌아가면서 일정시간씩 할당하여 처리하도록 하는 방식
+        - (사용자가 느끼기에) 응답시간이 짧음 - interactive
+        - 현대 운영체제에서 많이 사용됨
+    - real time OS(실시간)
+        - 정해진 시간안에 특정 작업이 반드시 완료되야 하는 경우에 사용
+        - 특수한 목적(ex. 반도체, 미사일 발사 등)을 가진 시스템에서 주로 사용
+- UNIX 계열 vs PC용
+    - UNIX
+        - C언어(기계어와 독립적인 언어)로 작성되어있기 때문에 이식성이 높음
+        - 커널에 최소한의 기능만 있음 (메모리 부담 감소)
+    - PC용 (ex. WINDOW)
+        - GUI 기반으로 사용자 편의성을 높임
+    
+
+# 하드웨어 구조
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/40767376-25e4-480a-ae95-99e3f62d986d/Untitled.png)
+
+CPU : memory에서 정보를 읽어들여서 연산수행
+
+mode bit : CPU가 한정된 instruction만 실행할 수 있도록 제어하는 장치
+
+## I/O 작업 수행
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e21a5f78-f637-4101-b4f6-6881d6f03fb3/Untitled.png)
+
+### interrupt
+
+- CPU의 현재 수행중인 작업에 중단을 걸음
+- interrupt vector - 해당 인터럽트의 처리 루틴의 주소값을 가짐
+- interrupt routine : 해당 인터럽트를 처리하는 커널의 함수
+- Timer : 타이머의 도움으로 운영체제는 여러 프로그램을 번갈아가며 실행할 수 있음
+
+### Synchronous I/O & Asynchronous I/O
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3db03e84-0d1e-4c9e-a30a-eaff2864d7a9/Untitled.png)
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9d280ff8-2f23-443c-9ad6-91aba5eb84a5/Untitled.png)
+
+- synchronous I/O
+    - IO장치에 무엇이 적혀있는지 다 확인하고 그 다음에 작업실행
+    - 구현방법
+        1. IO가 끝날때까지 CPU를 사용
+        2. IO가 끝날때까지 해당 프로그램에서 다른 프로그램으로 CPU를 넘김
+- asynchronous I/O
+    - IO장치와 상관없이 일단 작업 실행
+
+### DMA (direct memory acess)
+
+- DMA controller : CPU는 자기 작업을 하면서, local buffer에서 일어나는 작업들을 모아서 처리하고 CPU에는 한번만 interrupt걸어서 반영시킴. CPU의 원활한 사용을 위한 장치
+
+![2가지 입출력 방법, 왼쪽이 좀 더 일반적인 방법임](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c35b0690-6348-4e7a-9610-5a54cd2ee681/Untitled.png)
+
+2가지 입출력 방법, 왼쪽이 좀 더 일반적인 방법임
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d0590898-1363-4c53-be79-63418e134c3f/Untitled.png)
+
+# 프로그램의 실행
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/01b5fd09-1178-43da-8be6-bc9c79794e49/Untitled.png)
+
+- 프로그램의 실행 : 파일시스템 → 가상메모리 → 물리메모리 順으로 이동하여 실행함
+- 가상메모리 → 물리메모리로 이동할때, 당장 사용하는 필요한 부분만 올림 (메모리 절약을 위해)
+
+![프로그램은 유저모드, 커널모드를 왔다갔다하며 실행됨](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0f9aeae5-edf8-4713-a137-5ae856850c93/Untitled.png)
+
+프로그램은 유저모드, 커널모드를 왔다갔다하며 실행됨
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ede2c1b8-f9b9-4a25-833e-cea532cd639f/Untitled.png)
+
+ㅇ
